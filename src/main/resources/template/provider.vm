@@ -1,0 +1,8 @@
+package $packageName;
+
+$!package
+import com.bkjk.coreservice.loanapp.mybatis.provider.BaseProvider;
+
+public class $providerName extends BaseProvider<$domainClassPo> {
+
+}

@@ -1,0 +1,13 @@
+package $packageName;
+
+$!package
+import com.bkjk.coreservice.loanapp.mybatis.annotation.Field;
+import com.bkjk.coreservice.loanapp.mybatis.annotation.Table;
+
+import lombok.Data;
+
+@Data
+@Table("${tableName}")
+public class $className {
+
+$con}

@@ -1,0 +1,20 @@
+package $packageName;
+
+$!package
+
+import com.bkjk.platform.orm.mybatis.base.AbstractRepository;
+import com.bkjk.platform.orm.mybatis.base.BaseMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class ${domainClass}Repo extends AbstractRepository<$domainClassPo,$keyClass>{
+    
+    @Autowired
+    private $daoName $daoLittleName;
+    
+    protected BaseMapper<$domainClassPo,$keyClass> getMapper(){
+        return ${daoLittleName};
+    }
+    
+}

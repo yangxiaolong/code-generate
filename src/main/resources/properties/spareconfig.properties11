@@ -1,0 +1,13 @@
+target.table.name=property_right_investigation,property_right_investigation_seizure,property_right_investigation_mortgage,property_right_investigation_other,property_right_investigation_his
+target.table.exclude=
+target.data.base.name=loanappsparepart
+target.base.file.path=D:\\DEV\\CODE\\loanapp-1210\\loanapp-spare-part-service\\src\\main\\java
+target.base.file.bo.path=D:\\DEV\\CODE\\loanapp-1210\\loanapp-spi\\src\\main\\java
+target.base.file.mapper.path=D:\\DEV\\CODE\\loanapp-1210\\loanapp-spare-part-service\\src\\main\\resources\\mappers
+target.package.domain.name=com.bkjk.coreservice.loanapp.sparepart.internal.po
+target.package.bo.name=com.bkjk.coreservice.loanapp.sparepart.domain
+target.package.dao.name=com.bkjk.coreservice.loanapp.sparepart.internal.mapper
+target.package.provider.name=com.bkjk.coreservice.loanapp.sparepart.internal.mapper.provider
+target.package.repo.name=com.bkjk.coreservice.loanapp.sparepart.internal.repository
+target.package.service.name=com.bkjk.coreservice.loanapp.sparepart.impl
+target.package.controller.name=com.bkjk.coreservice.loanapp.sparepart.api

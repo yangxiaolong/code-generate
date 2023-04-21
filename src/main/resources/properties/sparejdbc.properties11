@@ -1,0 +1,7 @@
+mysql.url=jdbc:mysql://mysql.dev-mysql.bkjk.cn:3315/loanappsparepart?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false
+mysql.username=loanappsparepart
+mysql.password=r6cT1_OjawbUFu0
+
+
+ 
+

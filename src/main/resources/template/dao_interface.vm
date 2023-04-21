@@ -1,0 +1,50 @@
+package $packageName;
+import java.util.List;
+
+import org.apache.ibatis.annotations.DeleteProvider;
+import org.apache.ibatis.annotations.InsertProvider;
+import org.apache.ibatis.annotations.Options;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.ResultMap;
+import org.apache.ibatis.annotations.SelectProvider;
+import org.apache.ibatis.annotations.UpdateProvider;
+
+import com.bkjk.coreservice.loanapp.mybatis.condition.Condition;
+import com.bkjk.coreservice.loanapp.mybatis.condition.UpdateCondition;
+import com.bkjk.coreservice.loanapp.mybatis.mapper.BaseMapper;
+import com.bkjk.coreservice.loanapp.mybatis.provider.BaseProvider;
+$!package
+public interface $daoName extends BaseMapper<$domainClass, $keyClass> {
+
+    @Override
+    @InsertProvider(type = ${providerName}.class, method = "buildCreate")
+    @Options(useGeneratedKeys = true, keyProperty = "${beanInfo.primaryKey}")
+    Integer create($domainClass $domainLittleClassName);
+
+    @Override
+    @InsertProvider(type = ${providerName}.class, method = "buildBatchCreate")
+    @Options(useGeneratedKeys = true, keyProperty = "${beanInfo.primaryKey}")
+    Integer batchCreate(@Param(BaseProvider.ENTITY_LIST) List<$domainClass> ${domainLittleClassName}List);
+
+    @Override
+    @UpdateProvider(type = ${providerName}.class, method = "buildUpdate")
+    Integer update($domainClass $domainLittleClassName);
+    
+    @Override
+    @UpdateProvider(type = ${providerName}.class, method = "buildUpdateByCondition")
+    Integer updateByCondition(@Param(BaseProvider.UPDATE_CONDITION) UpdateCondition updateCondition);
+
+    @Override
+    @DeleteProvider(type = ${providerName}.class, method = "buildDeleteByCondition")
+    Integer deleteByCondition(@Param(BaseProvider.CONDITION) Condition condition);
+
+    @Override
+    @SelectProvider(type = ${providerName}.class, method = "buildFindByCondition")
+    @ResultMap("${domainLittleClassName}")
+    List<$domainClass> findByCondition(@Param(BaseProvider.CONDITION) Condition condition);
+
+    @Override
+    @SelectProvider(type = ${providerName}.class, method = "buildFindByConditionCount")
+    Integer findByConditionCount(@Param(BaseProvider.CONDITION) Condition condition);
+    
+}

@@ -1,0 +1,42 @@
+package $packageName;
+
+import java.util.Objects;
+
+$!package
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.BeanUtils;
+import org.springframework.stereotype.Repository;
+
+import com.bkjk.coreservice.loanapp.mybatis.mapper.BaseMapper;
+import com.bkjk.coreservice.loanapp.mybatis.repository.AbstractRepository;
+
+@Repository
+public class ${repoName} extends AbstractRepository<$domainClassBo, $domainClassPo, $keyClass> {
+
+    @Autowired
+    private $daoName $daoLittleName;
+
+    protected BaseMapper<$domainClassPo, $keyClass> getMapper() {
+        return ${daoLittleName};
+    }
+
+    @Override
+    public $domainClassPo convertBtoP($domainClassBo $domainLittleBo) {
+        if (Objects.isNull($domainLittleBo)) {
+            return null;
+        }
+        $domainClassPo $domainLittlePo = new $domainClassPo();
+        BeanUtils.copyProperties($domainLittleBo, $domainLittlePo);
+        return $domainLittlePo;
+    }
+
+    @Override
+    public $domainClassBo convertPtoB($domainClassPo $domainLittlePo) {
+        if (Objects.isNull($domainLittlePo)) {
+            return null;
+        }
+        $domainClassBo $domainLittleBo = new $domainClassBo();
+        BeanUtils.copyProperties($domainLittlePo, $domainLittleBo);
+        return $domainLittleBo;
+    }
+}
